@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83A16893-A896-41E4-BB4E-322CAC7F100D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MFramework.EF.Migrations.SqlServer</RootNamespace>
+    <AssemblyName>MFramework.EF.Migrations.SqlServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\MFramework.EF.Migrations.SqlServer.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="RedGate.Shared.SQL">
+      <HintPath>..\..\..\..\Program Files\Red Gate\SQL Comparison SDK 10\Assemblies\SQL Compare\RedGate.Shared.SQL.dll</HintPath>
+    </Reference>
+    <Reference Include="RedGate.Shared.Utils">
+      <HintPath>..\..\..\..\Program Files\Red Gate\SQL Comparison SDK 10\Assemblies\SQL Compare\RedGate.Shared.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="RedGate.SQLCompare.Engine">
+      <HintPath>..\..\..\..\Program Files\Red Gate\SQL Comparison SDK 10\Assemblies\SQL Compare\RedGate.SQLCompare.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseMigrator.cs" />
+    <Compile Include="MigratingInitializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MFramework.Common.Core\MFramework.Common.Core.csproj">
+      <Project>{cf36d7c6-91cd-4e7c-a550-328e4de85d9c}</Project>
+      <Name>MFramework.Common.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MFramework.Common\MFramework.Common.csproj">
+      <Project>{8E2D5264-6256-4D88-81E3-392D19400CA0}</Project>
+      <Name>MFramework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MFramework.EF.Core\MFramework.EF.Core.csproj">
+      <Project>{c1795e70-b170-4ce7-9626-1e051c5bd31e}</Project>
+      <Name>MFramework.EF.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MFramework.EF.Migrations\MFramework.EF.Migrations.csproj">
+      <Project>{cf832a4c-161b-4499-afb7-c63bb0abcfeb}</Project>
+      <Name>MFramework.EF.Migrations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MFramework.EF.Resources\MFramework.EF.Resources.csproj">
+      <Project>{2d388544-8e45-45a9-9e1f-fd188ded0e8b}</Project>
+      <Name>MFramework.EF.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
